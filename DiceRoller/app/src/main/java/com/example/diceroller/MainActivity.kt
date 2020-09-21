@@ -4,20 +4,27 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import com.example.diceroller.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding;
     lateinit var diceImage: ImageView;
     lateinit var rollButton: Button;
+    private val myName: MyName = MyName("Tung Le")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        diceImage = dice_image;
+        diceImage = binding.diceImage;
         rollButton = roll_button;
-
+        binding.myName = myName;
+        binding.apply {
+            myName?.name = "12123123"
+            invalidateAll()
+        }
         rollButton.setOnClickListener {
             rollDice()
         }

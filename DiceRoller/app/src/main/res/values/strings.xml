@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">DiceRoller</string>
     <string name="roll_label">Roll</string>
+    <string name="avatar_image">Avatar Image</string>
+    <string name="dice_image">Dice image</string>
+    <string name="nick_name_hint">What\'s your nick name ?</string>
 </resources>
